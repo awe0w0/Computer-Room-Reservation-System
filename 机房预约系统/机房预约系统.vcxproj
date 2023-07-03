@@ -127,7 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="globalFlie.h" />
+    <ClCompile Include="manager.cpp" />
+    <ClCompile Include="student.cpp" />
+    <ClCompile Include="teacher.cpp" />
+    <ClCompile Include="teacher.h" />
     <ClCompile Include="机房预约系统.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="manager.h" />
+    <ClInclude Include="Identity.h" />
+    <ClInclude Include="student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
