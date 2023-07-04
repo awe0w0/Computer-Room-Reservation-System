@@ -52,8 +52,12 @@
 */
 
 #include <iostream>
+#include <string>
 #include "Identity.h" 
 #include "globalFlie.h"
+#include "student.h"
+#include "teacher.h"
+#include "manager.h"
 #include <fstream>
 using namespace std;
 
@@ -91,7 +95,8 @@ void LoginIn(string fileName,int type) {
 		string fName;
 		string fPwd;
 		while (ifs >> fId && ifs >> fName && ifs >> fPwd) {
-			if (id == fId && name == fName && ifs >> fPwd) {
+			cout << fId << " " << fName << " " << fPwd << endl;
+			if (id == fId && name == fName && pwd == fPwd) {
 				cout << "学生验证登陆成功！" << endl;
 				system("pause");
 				person = new Student(id, name, pwd);

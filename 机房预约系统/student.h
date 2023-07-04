@@ -13,8 +13,6 @@ public:
 
 	virtual void applyOrder();
 
-	void applyOrder();
-
 	void showMyorder();
 
 	void showAllOrder();
