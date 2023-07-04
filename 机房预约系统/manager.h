@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
-#include "student.h"
-#include "teacher.h"
+#include "myPrint.hpp"
 #include "Identity.h"
 using namespace std;
 
@@ -18,6 +17,8 @@ public:
 
 	void initVector();
 
+	bool checkRepeat(int id, int type);
+
 	void showPerson();
 
 	void showComputer();
@@ -27,4 +28,6 @@ public:
 	vector<Student> vStu;
 
 	vector<Teacher> vTea;
+
+	vector<ComputerRoom> vCom;
 };

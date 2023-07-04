@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
+#include <algorithm>
+#include <functional>
 #include "globalFlie.h"
 using namespace std;
 

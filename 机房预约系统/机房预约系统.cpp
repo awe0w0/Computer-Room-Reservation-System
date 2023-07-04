@@ -129,10 +129,11 @@ void LoginIn(string fileName,int type) {
 		string fName;
 		string fPwd;
 		while (ifs >> fId && ifs >> fName && ifs >> fPwd) {
-			cout << fId << " " << fName << " " << fPwd << endl;
+			//cout << fId << " " << fName << " " << fPwd << endl;
 			if (id == fId && name == fName && pwd == fPwd) {
 				cout << "学生验证登陆成功！" << endl;
 				system("pause");
+				system("cls");
 				person = new Student(id, name, pwd);
 				return;
 			}
@@ -143,10 +144,11 @@ void LoginIn(string fileName,int type) {
 		string fName;
 		string fPwd;
 		while (ifs >> fId && ifs >> fName && ifs >> fPwd) {
-			cout << fId << " " << fName << " " << fPwd << endl;
+			//cout << fId << " " << fName << " " << fPwd << endl;
 			if (id == fId && name == fName && pwd == fPwd) {
 				cout << "教师验证登陆成功！" << endl;
 				system("pause");
+				system("cls");
 				person = new Teacher(id, name, pwd);
 				return;
 			}
@@ -156,7 +158,6 @@ void LoginIn(string fileName,int type) {
 		string fName;
 		string fPwd;
 		while ( ifs >> fName && ifs >> fPwd) {
-			cout << fName << " " << fPwd << endl;
 			if (name == fName && pwd == fPwd) {
 				cout << "管理员验证登陆成功！" << endl;
 				system("pause");
@@ -168,6 +169,8 @@ void LoginIn(string fileName,int type) {
 			}
 	}
 	cout << "验证登陆失败!" << endl;
+	system("pause");
+	system("cls");
 
 	return;
 }

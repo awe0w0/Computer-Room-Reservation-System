@@ -135,8 +135,10 @@
     <ClCompile Include="机房预约系统.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="computerRoom.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="Identity.h" />
+    <ClInclude Include="myPrint.hpp" />
     <ClInclude Include="student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
