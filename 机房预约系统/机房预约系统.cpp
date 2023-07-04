@@ -52,7 +52,6 @@
 */
 
 #include <iostream>
-#include <string>
 #include "Identity.h" 
 #include "globalFlie.h"
 #include "student.h"
@@ -60,6 +59,41 @@
 #include "manager.h"
 #include <fstream>
 using namespace std;
+
+void managerMenu(Identity*& manager) {
+	while (true) {
+		manager->operMenu();
+		Manager* man = (Manager*)manager;
+		int select = 0;
+
+		cin >> select;
+
+		if (select == 1) {
+			cout << "添加账号" << endl;
+			man->addPerson();
+		}
+		else if (select == 2) {
+			cout << "查看账号" << endl;
+			man->showPerson();
+		}
+		else if (select == 3) {
+			cout << "查看机房" << endl;
+			man->showComputer();
+		}
+		else if (select == 4) {
+			cout << "清空预约" << endl;
+			man->cleanFile();
+		}
+		else {
+			delete manager;
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+
+	}
+}
 
 void LoginIn(string fileName,int type) {
 	Identity* person = NULL;
@@ -105,15 +139,40 @@ void LoginIn(string fileName,int type) {
 		}
 	}
 	else if (type == 2) {
-		
+		int fId;
+		string fName;
+		string fPwd;
+		while (ifs >> fId && ifs >> fName && ifs >> fPwd) {
+			cout << fId << " " << fName << " " << fPwd << endl;
+			if (id == fId && name == fName && pwd == fPwd) {
+				cout << "教师验证登陆成功！" << endl;
+				system("pause");
+				person = new Teacher(id, name, pwd);
+				return;
+			}
+		}
 	}
 	else if (type == 3) {
-		
+		string fName;
+		string fPwd;
+		while ( ifs >> fName && ifs >> fPwd) {
+			cout << fName << " " << fPwd << endl;
+			if (name == fName && pwd == fPwd) {
+				cout << "管理员验证登陆成功！" << endl;
+				system("pause");
+				system("cls");
+				person = new Manager(name,pwd);
+				managerMenu(person);
+				return;
+				}
+			}
 	}
 	cout << "验证登陆失败!" << endl;
 
 	return;
 }
+
+
 
 int main(){
 	int select = 0;

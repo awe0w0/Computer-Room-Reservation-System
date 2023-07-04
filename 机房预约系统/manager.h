@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include "student.h"
+#include "teacher.h"
 #include "Identity.h"
 using namespace std;
 
@@ -14,9 +16,15 @@ public:
 
 	void addPerson();
 
+	void initVector();
+
 	void showPerson();
 
 	void showComputer();
 
 	void cleanFile();
+
+	vector<Student> vStu;
+
+	vector<Teacher> vTea;
 };
