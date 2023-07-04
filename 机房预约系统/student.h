@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "computerRoom.h"
 #include "Identity.h"
 using namespace std;
 
@@ -8,6 +9,8 @@ public:
 	Student();
 
 	Student(int	id, string name, string pwd);
+
+	void initStu();
 
 	virtual void operMenu();
 
@@ -18,6 +21,8 @@ public:
 	void showAllOrder();
 
 	void cancelOrder();
+
+	vector<ComputerRoom> vCom;
 
 	int m_Id;
 };

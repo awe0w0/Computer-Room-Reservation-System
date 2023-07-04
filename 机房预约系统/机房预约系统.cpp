@@ -95,6 +95,37 @@ void managerMenu(Identity*& manager) {
 	}
 }
 
+void studentMenu(Identity * &student) {
+	while (true) {
+		student->operMenu();
+
+		Student* stu = (Student*)student;
+		int select = 0;
+
+		cin >> select;
+
+		if (select == 1) {
+			stu->applyOrder();
+		}
+		else if (select == 2) {
+			stu->showMyorder();
+		}
+		else if (select == 3) {
+			stu->showAllOrder();
+		}
+		else if (select == 4) {
+			stu->cancelOrder();
+		}
+		else if (select == 0) {
+			delete student;
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+	}
+}
+
 void LoginIn(string fileName,int type) {
 	Identity* person = NULL;
 
@@ -106,7 +137,7 @@ void LoginIn(string fileName,int type) {
 		ifs.close();
 		return;
 	}
-
+	
 	int id = 0;
 	string name;
 	string pwd;
@@ -135,8 +166,13 @@ void LoginIn(string fileName,int type) {
 				system("pause");
 				system("cls");
 				person = new Student(id, name, pwd);
+				studentMenu(person);
 				return;
 			}
+			//else {
+			//	id = 0;
+			//	break;
+			//}
 		}
 	}
 	else if (type == 2) {
@@ -152,6 +188,9 @@ void LoginIn(string fileName,int type) {
 				person = new Teacher(id, name, pwd);
 				return;
 			}
+			//else {
+			//	return;
+			//}
 		}
 	}
 	else if (type == 3) {
@@ -165,7 +204,10 @@ void LoginIn(string fileName,int type) {
 				person = new Manager(name,pwd);
 				managerMenu(person);
 				return;
-				}
+			}
+			//else {
+			//	return;
+			//}
 			}
 	}
 	cout << "验证登陆失败!" << endl;

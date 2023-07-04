@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="globalFlie.h" />
     <ClCompile Include="manager.cpp" />
+    <ClCompile Include="orderFile.cpp" />
     <ClCompile Include="student.cpp" />
     <ClCompile Include="teacher.cpp" />
     <ClCompile Include="teacher.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="manager.h" />
     <ClInclude Include="Identity.h" />
     <ClInclude Include="myPrint.hpp" />
+    <ClInclude Include="orderFlie.h" />
     <ClInclude Include="student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
