@@ -95,6 +95,33 @@ void managerMenu(Identity*& manager) {
 	}
 }
 
+void teacherMenu(Identity*& teacher) {
+	while (true) {
+		teacher->operMenu();
+		Teacher* man = (Teacher*)teacher;
+		int select = 0;
+
+		cin >> select;
+
+		if (select == 1) {
+			cout << "查看所有预约" << endl;
+			man->showAllOrder();
+		}
+		else if (select == 2) {
+			cout << "审核预约" << endl;
+			man->validOrder();
+		}
+		else {
+			delete teacher;
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+
+	}
+}
+
 void studentMenu(Identity * &student) {
 	while (true) {
 		student->operMenu();
@@ -186,6 +213,7 @@ void LoginIn(string fileName,int type) {
 				system("pause");
 				system("cls");
 				person = new Teacher(id, name, pwd);
+				teacherMenu(person);
 				return;
 			}
 			//else {

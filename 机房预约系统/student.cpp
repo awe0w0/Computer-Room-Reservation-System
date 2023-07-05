@@ -193,6 +193,7 @@ void Student::cancelOrder() {
 		if (atoi(of.m_orderData[i]["stuId"].c_str()) == this->m_Id) {
 			if (of.m_orderData[i]["status"] == "1" || of.m_orderData[i]["status"] == "2") {
 				v.push_back(i);
+				cout << endl;
 				cout << index++ << "、 ";
 				cout << "预约日期：周" << of.m_orderData[i]["date"] << endl;
 				cout << "时段：" << (of.m_orderData[i]["interval"] == "1" ? "上午" : "下午") << endl;
